@@ -39,10 +39,10 @@
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66BD1AD8A5B34AF8ED791F50FE1FB7BE /* SwiftyMapper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SwiftyMapper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A1B01F516A854946CB67EE01B67F602 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7ACE1CA9204551B900838FD5 /* ObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectFactory.m; path = ../ObjC/ObjectFactory.m; sourceTree = "<group>"; };
-		7ACE1CAA204551B900838FD5 /* ObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectFactory.h; path = ../ObjC/ObjectFactory.h; sourceTree = "<group>"; };
-		7AF85919204556F20068DF85 /* SwiftyErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyErrors.swift; sourceTree = "<group>"; };
-		7AF8591A204556F20068DF85 /* SwiftyMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyMapper.swift; sourceTree = "<group>"; };
+		7ACE1CA9204551B900838FD5 /* ObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectFactory.m; sourceTree = "<group>"; };
+		7ACE1CAA204551B900838FD5 /* ObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectFactory.h; sourceTree = "<group>"; };
+		7AF85919204556F20068DF85 /* SwiftyErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyErrors.swift; path = SwiftyMapper/Classes/SwiftyErrors.swift; sourceTree = "<group>"; };
+		7AF8591A204556F20068DF85 /* SwiftyMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyMapper.swift; path = SwiftyMapper/Classes/SwiftyMapper.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9ACEBEE702C8DD61AF787B7D13C02F46 /* Pods-SwiftyMapper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyMapper_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B4BDE6656FFBF30FCFA3271E8D598BB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +109,8 @@
 				7ACE1CAA204551B900838FD5 /* ObjectFactory.h */,
 				7ACE1CA9204551B900838FD5 /* ObjectFactory.m */,
 			);
-			path = ObjC;
+			name = ObjC;
+			path = SwiftyMapper/Classes/ObjC;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
