@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SwiftyMapper_Tests' do
+  pod 'SwiftyMapper', :path => '../'
+  
+  
+end
