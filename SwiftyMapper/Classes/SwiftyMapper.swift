@@ -209,7 +209,7 @@ fileprivate struct PropertyInfo: Hashable {
     }
     
     static func ==(left: PropertyInfo, right: PropertyInfo) -> Bool {
-        return (left.label == right.label) && (left.type == right.type)
+        return left.hashValue == right.hashValue
     }
 }
 

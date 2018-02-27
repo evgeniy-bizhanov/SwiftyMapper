@@ -26,7 +26,8 @@ This CocoaPod provides the ability to map data transfering between layers
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'evgeniy-bizhanov' => 'evgeniy.bizhanov@me.com' }
   s.source           = { :git => 'https://github.com/evgeniy-bizhanov/SwiftyMapper.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/evgeniybizhanov'
+  s.social_media_url = 'https://vk.com/evgeniybizhanov'
 
   s.ios.deployment_target = '8.0'
   
