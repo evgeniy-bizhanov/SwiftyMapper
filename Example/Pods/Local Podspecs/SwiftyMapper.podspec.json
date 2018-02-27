@@ -1,0 +1,22 @@
+{
+  "name": "SwiftyMapper",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftyMapper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/evgeniy-bizhanov/SwiftyMapper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "evgeniy-bizhanov": "evgeniy.bizhanov@me.com"
+  },
+  "source": {
+    "git": "https://github.com/evgeniy-bizhanov/SwiftyMapper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftyMapper/Classes/**/*"
+}

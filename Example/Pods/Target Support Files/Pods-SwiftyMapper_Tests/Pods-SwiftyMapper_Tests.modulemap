@@ -1,0 +1,6 @@
+framework module Pods_SwiftyMapper_Tests {
+  umbrella header "Pods-SwiftyMapper_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyMapper (0.1.0)
+
+DEPENDENCIES:
+  - SwiftyMapper (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftyMapper:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftyMapper: d697e91187e0a2eea10bdbabfe6c4d35dcdffc3e
+
+PODFILE CHECKSUM: 50dc9bbab5284f4890443ca585862b84301745d8
+
+COCOAPODS: 1.4.0

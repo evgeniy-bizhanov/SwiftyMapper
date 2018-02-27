@@ -14,9 +14,9 @@
 /* Begin PBXFileReference section */
 		1F0494467CF793FAC163E82D /* Pods-SwiftyMapper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyMapper_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyMapper_Tests/Pods-SwiftyMapper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		250B4A1CA116E15947BC25FC /* Pods-SwiftyMapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyMapper_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyMapper_Tests/Pods-SwiftyMapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2BABDB9B34F2D366D0648AFA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		424E1D07AEE5C8D906E851C5 /* SwiftyMapper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SwiftyMapper.podspec; path = ../SwiftyMapper.podspec; sourceTree = "<group>"; };
-		5E24698F5DC099C0D116BDE3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2BABDB9B34F2D366D0648AFA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		424E1D07AEE5C8D906E851C5 /* SwiftyMapper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyMapper.podspec; path = ../SwiftyMapper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5E24698F5DC099C0D116BDE3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SwiftyMapper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyMapper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -131,12 +131,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6TZ3MZ977X;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -339,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F0494467CF793FAC163E82D /* Pods-SwiftyMapper_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 6TZ3MZ977X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -360,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 250B4A1CA116E15947BC25FC /* Pods-SwiftyMapper_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 6TZ3MZ977X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
