@@ -20,7 +20,7 @@ public protocol SwiftyMapperDestinationProtocol {
     // self as SwiftMapperSourceProtocol give access to complete binding to<TSource>
     //
     // Input type must be NSObject, because further the Objective C will be involved
-    // for create an instance and mirror it
+    // for create an instance and reflect it
     
     /// Creates a binding key based on destination type
     func bind<TDestination: NSObject>(_ destination: TDestination.Type) throws -> SwiftyMapperSourceProtocol
@@ -32,6 +32,7 @@ public protocol SwiftyMapperSourceProtocol {
     // for create an instance and mirror it
     //
     // IS NOT THREAD-SAFE. It simply takes the last created binding configuration
+    // and modifies it
     
     /// Сompletes the binding process based on source type
     func to<TSource: NSObject>(_ source: TSource.Type) throws
@@ -125,7 +126,9 @@ extension SwiftyMapper: SwiftyMapperSourceProtocol {
         // Get the last configuration pointer
         let item = dictionary[dictionary.count - 1]
         
-        guard !dictionary.contains(where: { ($0.key == item.key) && ($0.linkedTo == TSource.self) }) else {
+        let forCheckConfigurationItem = MapConfigurationItem(key: item.key, linkedTo: TSource.self)
+        
+        guard !dictionary.contains(where: { $0 == forCheckConfigurationItem }) else {
             throw SwiftyMapperError.configurationExists
         }
         
@@ -166,7 +169,7 @@ extension SwiftyMapper: SwiftyMapperProtocol {
 // MARK: Data structures
 
 // Configuration data item
-final fileprivate class MapConfigurationItem: CustomStringConvertible {
+final fileprivate class MapConfigurationItem: CustomStringConvertible, Hashable {
     /// Key (destination) type
     var key: Any.Type
     
@@ -178,6 +181,16 @@ final fileprivate class MapConfigurationItem: CustomStringConvertible {
     
     init(key: Any.Type) {
         self.key = key
+    }
+    
+    init(key: Any.Type, linkedTo: Any.Type) {
+        self.key = key
+        self.linkedTo = linkedTo
+    }
+    
+    convenience init(key: Any.Type, linkedTo: Any.Type, properties: PropertyInfo...) {
+        self.init(key: key, linkedTo: linkedTo)
+        self.properties = Set(properties)
     }
     
     var description: String {
@@ -192,6 +205,20 @@ final fileprivate class MapConfigurationItem: CustomStringConvertible {
         }
         
         return description
+    }
+    
+    var hashValue: Int {
+        var result = "\(key)"
+        
+        if let linkedTo = linkedTo {
+            result += "~\(linkedTo)"
+        }
+        
+        return result.hashValue
+    }
+    
+    static func ==(lhs: MapConfigurationItem, rhs: MapConfigurationItem) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }
 
@@ -208,8 +235,8 @@ fileprivate struct PropertyInfo: Hashable {
         return result.hashValue
     }
     
-    static func ==(left: PropertyInfo, right: PropertyInfo) -> Bool {
-        return left.hashValue == right.hashValue
+    static func ==(lhs: PropertyInfo, rhs: PropertyInfo) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }
 

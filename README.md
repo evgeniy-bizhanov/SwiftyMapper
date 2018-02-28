@@ -20,6 +20,81 @@ Map to source data:
 destination: DestinationData? = try SwiftyMapper.shared.map(to: source)
 ```
 
+## Example
+
+Data types example:
+```ruby
+@objcMembers
+class SourceData: NSObject {
+    var string: String?
+    var integer: Int = 0
+    var float: Float = 0.0
+}
+```
+
+```ruby
+@objcMembers
+class DestinationData: NSObject {
+    var string: String?
+    var integer: Int = 0
+    var double: Double = 0.0
+}
+```
+
+Wrong data type with an optional Int:
+```ruby
+@objcMembers
+class WrongData: NSObject {
+    var string: String?
+    var integer: Int?
+}
+```
+
+Best practice of configure the binding:
+```ruby
+do {
+    try SwiftyMapper.shared.bind(DestinationData.self).to(SourceData.self)
+    // try SwiftyMapper.shared.bind(DestinationData.self).to(SourceData.self) // throws configurationExists
+    // try SwiftyMapper.shared.bind(DestinationData.self).to(WrongData.self) // throws typeIsNotSupported
+} catch SwiftyMapperError.cantCreateInstance(of: let instance) {
+    print("Can't create the mirroring instance of type \(instance)")
+} catch SwiftyMapperError.configurationExists {
+    print("Configuration already exists")
+} catch SwiftyMapperError.typeIsNotSupported(type: let type, memberType: let memberType) {
+    print("\(memberType) of \(type) is not actually supported")
+} catch {
+    print("Unexpected error \(error)")
+}
+```
+
+Create sample data:
+```ruby
+let source = SourceData()
+source.string = "Hello Swift!"
+source.integer = 123
+source.float = 321.0
+```
+
+Map to sample data:
+```ruby
+do {
+    if let destination: DestinationData = try SwiftyMapper.shared.map(to: source) {
+        print(destination.string) // Prints "Hello Swift!"
+        print(destination.integer) // Prints "123"
+        print(destination.double) // Prints "0
+    }
+
+    // let _: WrongData? = try SwiftyMapper.shared.map(to: source) // throws cantFindConfiguration
+    // let _ = try SwiftyMapper.shared.map(to: source) // throws cantFindConfiguration
+} catch SwiftyMapperError.cantCreateInstance(of: let instance) {
+    print("Can't create the mirroring instance of type \(instance)")
+} catch SwiftyMapperError.cantFindConfiguration(destination: let destinationType, source: let sourceType) {
+    print("Can't find configuration with\n   destination: \(destinationType)\n   source:      \(sourceType)")
+} catch {
+    print("Unexpected error \(error)")
+}
+```
+
 ## Requirements
 - Swift 4.x
 
@@ -31,10 +106,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SwiftyMapper'
 ```
-
-## Example
-
-An example project is included with this repo. To run the example project, clone the repo, and run ``pod install`` from the Example directory first.
 
 ## Postscriptum
 
